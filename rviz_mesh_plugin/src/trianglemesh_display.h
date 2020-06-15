@@ -182,7 +182,7 @@ private:
     message_filters::Subscriber<mesh_msgs::TriangleMeshStamped> m_meshSubscriber;
 
     /// Messagefilter for meshMsg
-    tf2_ros::MessageFilter<mesh_msgs::TriangleMeshStamped>* m_tfMeshFilter;
+    tf::MessageFilter<mesh_msgs::TriangleMeshStamped>* m_tfMeshFilter;
 
     /// Synchronizer for meshMsgs
     message_filters::Cache<mesh_msgs::TriangleMeshStamped>* m_synchronizer;

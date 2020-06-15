@@ -276,13 +276,13 @@ private:
     message_filters::Subscriber<mesh_msgs::MeshVertexCostsStamped> m_vertexCostsSubscriber;
 
     /// Messagefilter for meshMsg
-    tf2_ros::MessageFilter<mesh_msgs::MeshGeometryStamped>* m_tfMeshFilter;
+    tf::MessageFilter<mesh_msgs::MeshGeometryStamped>* m_tfMeshFilter;
 
     /// Messagefilter for vertex colors
-    tf2_ros::MessageFilter<mesh_msgs::MeshVertexColorsStamped>* m_tfVertexColorsFilter;
+    tf::MessageFilter<mesh_msgs::MeshVertexColorsStamped>* m_tfVertexColorsFilter;
 
     /// Messagefilter for vertex costs
-    tf2_ros::MessageFilter<mesh_msgs::MeshVertexCostsStamped>* m_tfVertexCostsFilter;
+    tf::MessageFilter<mesh_msgs::MeshVertexCostsStamped>* m_tfVertexCostsFilter;
 
     /// Synchronizer for meshMsgs
     message_filters::Cache<mesh_msgs::MeshGeometryStamped>* m_meshSynchronizer;
