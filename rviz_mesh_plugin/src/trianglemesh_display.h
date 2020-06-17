@@ -99,6 +99,8 @@ public:
      */
     TriangleMeshDisplay();
 
+    void setTopic(const QString &topic, const QString &datatype) override;
+
     /**
      * @brief Destructor.
      */

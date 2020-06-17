@@ -5,6 +5,7 @@
     <description>
       Displays 'mesh_msgs/TriangleMesh' messages.
     </description>
+    <message_type>mesh_msgs/TriangleMeshStamped</message_type>
   </class>
   <class name="rviz_mesh_plugin/TexturedMesh"
          type="rviz_mesh_plugin::TexturedMeshDisplay"

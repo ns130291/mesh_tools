@@ -208,6 +208,10 @@ TriangleMeshDisplay::TriangleMeshDisplay()
     );
 }
 
+void TriangleMeshDisplay::setTopic(const QString &topic, const QString &datatype) {
+    m_meshTopic->setValue(topic);
+    updateTopic();
+}
 
 TriangleMeshDisplay::~TriangleMeshDisplay()
 {
