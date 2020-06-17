@@ -2,15 +2,23 @@
 
 ## Installation
 
-Install required packages (Intel processor)
+Install required packages 
+    
+### Intel processor, no GPU
 
     sudo add-apt-repository ppa:intel-opencl/intel-opencl
     sudo apt update
-    sudo apt install intel-opencl-icd ocl-icd-opencl-dev ocl-icd-libopencl1 opencl-headers
+    sudo apt install intel-opencl-icd
+
+### All platforms
+
+    sudo apt install ocl-icd-opencl-dev 
+    
 
 Inside `src` folder of your workspace
 
     git clone https://github.com/ns130291/mesh_tools.git
+    cd mesh_tools
     git submodule update --init --recursive
 
 Build your workspace and source it
@@ -26,18 +34,18 @@ Open three terminals
 2nd terminal 
     
     rostopic pub -r 1 /mesh2 mesh_msgs/TriangleMeshStamped "header:
-    seq: 0
-    stamp:
+      seq: 0
+      stamp:
         secs: 0
         nsecs: 0
-    frame_id: 'base_footprint'
+      frame_id: 'base_footprint'
     mesh:
-    triangles:
-    - vertex_indices: [0, 1, 2]
-    vertices:
-    - {x: 0.0, y: 0.0, z: 0.0}
-    - {x: 1.0, y: 0.0, z: 0.0}
-    - {x: 1.0, y: 1.0, z: 0.0}"
+      triangles:
+      - vertex_indices: [0, 1, 2]
+      vertices:
+      - {x: 0.0, y: 0.0, z: 0.0}
+      - {x: 1.0, y: 0.0, z: 0.0}
+      - {x: 1.0, y: 1.0, z: 0.0}"
 
 3rd terminal
 
@@ -51,6 +59,9 @@ The rviz window should then show a green triangle:
 ## Implemented changes
 
 * Changed tf API from tf2 to old tf API as rviz in ROS Kinetic still uses it. In ROS Melodic rviz was updated to use tf2.
+
+___
+
 
 # Mesh Tools
 
