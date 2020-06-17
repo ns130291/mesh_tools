@@ -345,7 +345,7 @@ void TexturedMeshDisplay::onInitialize()
     m_tfMeshFilter->connectInput(m_meshSubscriber);
     context_->getFrameManager()->registerFilterForTransformStatusCheck(m_tfMeshFilter, this);
 
-    m_tfVertexColorsFilter_old = new tf::MessageFilter<mesh_msgs::MeshVertexColorsStamped>(
+    m_tfVertexColorsFilter = new tf::MessageFilter<mesh_msgs::MeshVertexColorsStamped>(
         *rviz::Display::context_->getTFClient(),
         rviz::Display::fixed_frame_.toStdString(),
         10,
@@ -354,7 +354,7 @@ void TexturedMeshDisplay::onInitialize()
     m_tfVertexColorsFilter->connectInput(m_vertexColorsSubscriber);
     context_->getFrameManager()->registerFilterForTransformStatusCheck(m_tfVertexColorsFilter, this);
 
-    m_tfVertexCostsFilter_old = new tf::MessageFilter<mesh_msgs::MeshVertexCostsStamped>(
+    m_tfVertexCostsFilter = new tf::MessageFilter<mesh_msgs::MeshVertexCostsStamped>(
         *rviz::Display::context_->getTFClient(),
         rviz::Display::fixed_frame_.toStdString(),
         10,
